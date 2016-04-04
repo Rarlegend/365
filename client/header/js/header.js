@@ -38,8 +38,8 @@ Template.header.events({
         event.preventDefault();
         Meteor.logout(logoutFunction);
     },
-    'click .dropdownAbout': function(event){
-        Router.go("mainAbout");
+    'click .dropdownSettings': function(event){
+        Router.go("settings");
     },
     'click .dropdownTeam': function(event){
         Router.go("mainTeam");
