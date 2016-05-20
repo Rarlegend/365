@@ -1,0 +1,63 @@
+ul {
+
+    list-style-type: none;
+    padding: 5px;
+    margin-right:800px ;
+    margin-left:60px ;
+    width: 200px;
+
+
+}
+
+
+ul#options li{
+
+	display: block;
+    color: #000;
+    padding: 4px 0 8px 16px;
+    text-decoration: none;
+} 
+
+
+/* Change the link color on hover */
+ul#options li:hover {
+    background-color: #00A7C9;
+    color: white;
+}
+
+
+#profile {
+	border: 1px solid black;
+    margin-left: 22%;
+    margin-top: 15px;
+    padding:1px 16px;
+    height: 600px;
+    width: 800px;
+    display: none;
+
+}
+
+#password {
+	order: 1px solid black;
+    margin-left: 22%;
+    margin-top: 15px;
+    padding:1px 16px;
+    height: 600px;
+    width: 800px;
+    display: none;
+}
+
+#phone {
+   display: none;
+
+
+}
+
+
+#settings {
+    margin-left: 120px;
+    margin-top: 40px;
+     
+
+}
+

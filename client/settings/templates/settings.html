@@ -1,3 +1,75 @@
 <template name="settings">
 
+<html>
+<head>
+   <link rel="stylesheet" href="settings.css">
+
+
+
+</head>
+
+
+<body>
+
+<div id = profile>
+  <h2 align = "center">profile-test</h2> 
+</div>
+
+<div id = password>
+  <h2 align = "center">password</h2>
+ </div>
+
+<div id = phone>
+  <h2 align = "center">phone number</h2>
+ </div>
+
+<!-- These are comments  -->
+<h3 align = "left" id = "settings">Settings</h3>
+<div align = "left">
+<ul id = "options">
+    <li onclick = "first()" style = "font-size:110%">Profile Picture</li>
+    <li onclick = "second()" style = "font-size:110%">Change Password</li>
+    <li style = "font-size:110%">Change Phone Number</li>
+</ul>
+</div>
+
+
+<script>
+ function second() {
+   var prof = document.getElementById('profile');
+   var pass = document.getElementById('password');
+   var ph =  document.getElementById('phone');
+
+   var displayProfSetting = prof.style.display;
+   var displayPassSetting = pass.style.display;
+   var displayPhSetting = ph.style.display;
+
+   pass.style.display = 'block';
+   prof.style.display = 'none';
+   ph.style.display = 'none';
+     
+ }
+
+
+ function first() {
+   var prof = document.getElementById('profile');
+   var pass = document.getElementById('password');
+   var ph =  document.getElementById('phone');
+
+   pass.style.display = 'none';
+   prof.style.display = 'block';
+   ph.style.display = 'none';
+    
+   
+ }
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
 </template>
