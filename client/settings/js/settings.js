@@ -1,5 +1,14 @@
 Template.settings.helpers({
-
+     picture: function() {
+        if (Meteor.user()) {
+            var picture = Meteor.user().profile.picture;
+            var customAvatar = Avatars.findOne({ _id: picture });
+            if (customAvatar) {
+                return customAvatar.url();
+            }
+        }
+        return picture;
+    }
 });
 
 Template.settings.events({
@@ -7,6 +16,13 @@ Template.settings.events({
 		Meteor.call("readNotification", this._id);
     },
 });
+
+
+
+
+ 
+
+ 
 
 
 
