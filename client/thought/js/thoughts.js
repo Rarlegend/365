@@ -122,7 +122,7 @@ Template.thought.hooks({
             return;
         }
         var bubble = $('#' + thought._id);
-        console.log($(bubble)[0].style.backgroundColor);
+        // console.log($(bubble)[0].style.backgroundColor);
         var item_clone = bubble.clone();
         bubble.data("clone", item_clone);
         var position = bubble.position();
