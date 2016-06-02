@@ -21,14 +21,18 @@ Template.notifications.helpers({
                 element.isFriendType = true;
             }
             else{
+                var text = ""
                 if (notification.postId){
                     var thought = Thoughts.findOne({_id:notification.postId});
-                    var text = '"' + thought.text + '"';
-                    element.notification = ' collected your post: ' + text;
+                    if (thought){
+                        var text = thought.text;
+                        if(text.length > 100){
+                            text = text.substr(0,100) + "..."
+                        }
+                        var text = ' "' + text + '"';
+                    }
                 }
-                else{
-                    element.notification = ' collected your post:';
-                }
+                element.notification = ' collected your post:' + text;
                 element.isFriendType = false;
             }
             element.username = user.username;
