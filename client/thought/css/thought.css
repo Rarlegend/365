@@ -237,7 +237,10 @@ input.button-add {
 
 .cloned-myFeed {
     position: absolute;
-    height: calc(100% - 20px);
+    /*height: calc(100% - 20px);*/
+    height: -webkit-calc(100% - 95px);
+    height: -moz-calc(100% - 95px);
+    height: calc(100% - 95px);
     border-left: 1px solid #97D8F9;
     border-right: 1px solid #97D8F9;
     width: 50%;
@@ -260,7 +263,10 @@ input.button-add {
     position: absolute;
     width: 100%;
     margin: 10px 0;
-    height: calc(100% - 20px);
+    /*height: calc(100% - 20px);*/
+    height: -webkit-calc(100% - 95px);
+    height: -moz-calc(100% - 95px);
+    height: calc(100% - 95px);
     min-height: 1px;
 }
 

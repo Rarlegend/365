@@ -14,9 +14,12 @@
 }
 .feed {
     height: 100%;
-    height: -webkit-calc(100% - 20px);
+    /*height: -webkit-calc(100% - 20px);
     height: -moz-calc(100% - 20px);
-    height: calc(100% - 20px);
+    height: calc(100% - 20px);*/
+    height: -webkit-calc(100% - 95px);
+    height: -moz-calc(100% - 95px);
+    height: calc(100% - 95px);
     margin: 10px 0;
     /*overflow: auto;*/
     z-index: 0;
