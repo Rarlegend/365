@@ -23,23 +23,24 @@ Template.header.events({
     'click .icon-bellnavbar': function(){
         Router.go("notifications");
     },
-    'click #settingsButton': function(event){
-        console.log(Meteor.user());
-        event.preventDefault();
-        // $("#settingDropDown").toggle();
-        if ($("#settingDropDown").css("display") == "none"){
-            $("#settingDropDown").css("display", "inline-block");
-        }
-        else{
-            $("#settingDropDown").css("display", none);
-        }
-    },
+    // 'click #settingsButton': function(event){
+    //     console.log(Meteor.user());
+    //     event.preventDefault();
+    //     // $("#settingDropDown").toggle();
+    //     if ($("#settingDropDown").css("display") == "none"){
+    //         $("#settingDropDown").css("display", "inline-block");
+    //     }
+    //     else{
+    //         $("#settingDropDown").css("display", none);
+    //     }
+    // },
     'click .logout': function(event){
         event.preventDefault();
         Meteor.logout(logoutFunction);
     },
     'click .dropdownSettings': function(event){
         Router.go("settings");
+        hideMainMenu();
     },
     'click .dropdownTeam': function(event){
         Router.go("mainTeam");
