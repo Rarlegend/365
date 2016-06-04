@@ -32,17 +32,25 @@
 
 
 <div id = password>
-  
   <div id = changes>
-   <input name="user[email]" type="email" placeholder="Enter Old Password" class="input pass"/>
-   <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass"/>
-   <input name="user[password2]" type="password" placeholder="Confirm password" required="required" class="input pass"/>
-  </div>
+  <form id = "changePassform"> 
+        <input class="loginForm" id="changeOld" type="password" name="oldPass"
+        placeholder="old password">
+        <br>
+        <input class="loginForm" id="changeNew" type="password" name="newPass"
+        placeholder="new password">
+        <br>
+        <input class="loginForm" id="changeConfirm" type="password" name="newPassConfirm"
+        placeholder="new password (again)">
+        <br>
+        <input type="submit" class="blueLoginButton" id="changePasswordSubmit" value="Confirm">
+  </form>
 
-   <button class="button button2" id ="pass">Change Password</button>
+  </div>
 
 
 </div>
+
 
 
 
