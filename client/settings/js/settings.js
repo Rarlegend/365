@@ -26,7 +26,7 @@ Template.settings.events({
         else if (newPassword == newConfirm){
             Accounts.changePassword(oldPassword, newPassword, function(err){
                 if (err){
-                    alert(err.reason);
+                    // alert(err.reason);
                     Session.set("showChangePassword", false);
                     // $("#changePassword").hide();
                 }
