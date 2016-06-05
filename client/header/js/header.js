@@ -39,8 +39,8 @@ Template.header.events({
         Meteor.logout(logoutFunction);
     },
     'click .dropdownSettings': function(event){
-        Router.go("settings");
         hideMainMenu();
+        Router.go("settings");
     },
     'click .dropdownTeam': function(event){
         Router.go("mainTeam");

@@ -12,9 +12,6 @@ Template.settings.helpers({
 });
 
 Template.settings.events({
-	'click [data-action=read]': function() {
-		Meteor.call("readNotification", this._id);
-    },
 
     'submit #changePassForm': function(event){
         event.preventDefault();
@@ -60,7 +57,7 @@ Template.settings.events({
                         'profile.picture' : fileObj._id
                     }
                     Meteor.users.update(Meteor.userId(), {$set: avatarUrl});
-                    Session.set('showProfile', Meteor.user());
+                    // Session.set('showProfile', Meteor.user());
                 }
             });
         });
