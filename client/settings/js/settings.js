@@ -13,7 +13,7 @@ Template.settings.helpers({
 
 Template.settings.events({
 
-    'submit #changePassForm': function(event){
+    'submit #changePassForm': function(event, template){
         event.preventDefault();
         var oldPassword = event.target.oldPass.value;
         var newPassword = event.target.newPass.value;
@@ -43,6 +43,11 @@ Template.settings.events({
             // Session.set("showChangePassword", false);
             // $("#changePassword").hide();
         }
+        // template.find("changePassForm").reset();
+        alert("Success!");
+        event.target.reset();
+
+
     },
 
     'change #changed-pic': function(event, template) {
