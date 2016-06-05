@@ -47,6 +47,26 @@ Template.settings.events({
             // $("#changePassword").hide();
         }
     },
+
+    'change #changed-pic': function(event, template) {
+        FS.Utility.eachFile(event, function(file) {
+            Avatars.insert(file, function (err, fileObj) {
+                if (err) { // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+                    console.log(err);
+                } else {
+                    $('#upload-picture').modal('hide');
+                    $('#change-picture').hide();
+                    var avatarUrl = {
+                        'profile.picture' : fileObj._id
+                    }
+                    Meteor.users.update(Meteor.userId(), {$set: avatarUrl});
+                    Session.set('showProfile', Meteor.user());
+                }
+            });
+        });
+    },
+
+
 });
 
 
