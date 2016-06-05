@@ -45,49 +45,6 @@ Template.header.events({
     'click .dropdownTeam': function(event){
         Router.go("mainTeam");
     },
-    'click #changePasswordButton': function(event){
-        event.preventDefault();
-        event.stopPropagation();
-        hideMainMenu();
-        Session.set("showChangePassword", true);
-        //$("#changePassword").show();
-    },
-    'click #changePassword': function(event){
-        Session.set("showChangePassword", false);
-        //$("#changePassword").hide();
-    },
-    'click #changePassForm': function(event){
-        event.stopPropagation();
-    },
-    'submit #changePassForm': function(event){
-        event.preventDefault();
-        var oldPassword = event.target.oldPass.value;
-        var newPassword = event.target.newPass.value;
-        var newConfirm = event.target.newPassConfirm.value;
-        if (Session.get("isFB")){
-            alert("You logged in with FB!");
-            Session.set("showChangePassword", false);
-            // $("#changePassword").hide();
-        }
-        else if (newPassword == newConfirm){
-            Accounts.changePassword(oldPassword, newPassword, function(err){
-                if (err){
-                    alert(err.reason);
-                    Session.set("showChangePassword", false);
-                    // $("#changePassword").hide();
-                }
-                else{
-                    Session.set("showChangePassword", false);
-                    // $("#changePassword").hide();
-                }
-            });
-        }
-        else{
-            alert("Passwords no not match"); //TODO Send error to user
-            Session.set("showChangePassword", false);
-            // $("#changePassword").hide();
-        }
-    },
     'click .icon-moreiconnavbar': function(event) {
         event.stopPropagation();
         if ($("#main-menu").css("display") === "block") {
