@@ -34,6 +34,8 @@ Template.settings.events({
                     console.log("success");
                     // Session.set("showChangePassword", false);
                     // $("#changePassword").hide();
+                    alert("Success!");
+                    event.target.reset();
                 }
             });
         }
@@ -44,8 +46,7 @@ Template.settings.events({
             // $("#changePassword").hide();
         }
         // template.find("changePassForm").reset();
-        alert("Success!");
-        event.target.reset();
+
 
 
     },
