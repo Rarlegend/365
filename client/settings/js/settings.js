@@ -51,7 +51,7 @@ Template.settings.events({
 
     },
 
-    'change #changed-pic': function(event, template) {
+    'change #attach': function(event, template) {
         FS.Utility.eachFile(event, function(file) {
             Avatars.insert(file, function (err, fileObj) {
                 if (err) { // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP

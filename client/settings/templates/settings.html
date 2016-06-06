@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
    <!-- Optional theme -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
    <link rel="stylesheet" href="settings.css">
 
@@ -33,7 +33,7 @@
 
 <div id = password>
   <div id = changes>
-  <form id = "changePassForm"> 
+  <form id = "changePassForm">
         <input class="loginForm" id="changeOld" type="password" name="oldPass"
         placeholder="old password">
         <br>
@@ -43,7 +43,8 @@
         <input class="loginForm" id="changeConfirm" type="password" name="newPassConfirm"
         placeholder="new password (again)">
         <br>
-        <input type="submit" class="blueLoginButton" id="changePasswordSubmit" value="Confirm">
+        <button type="submit" class="grayLoginButton" id="changePasswordSubmit" value="Confirm">Submit
+        </button>
   </form>
 
   </div>
@@ -58,22 +59,24 @@
 <div id = profile>
  <div class = "row">
      <div class="col-lg-8 col-xs-8 col-md-8">
-           <button class="button button2" id = "change">Change Profile Picture</button>
-           
-                    <input type="file" value = "Change Profile Picture" size="40" id = "changed-pic">
-          
- 
+           <!-- <button class="button button2" id = "change">Change Profile Picture</button> -->
+           <label for="attach" class="custom-file-upload">
+            <!-- <i class="fa fa-cloud-upload"></i> --> Profile Picture
+           </label>
+           <input type="file" value = "Change Profile Picture" size="40" id = "attach">
+
+
      </div>
-     
+
      <div class = "container">
            <img id="facebookpic" class="header-circle unselectable" alt="{{username}}" src="{{picture}}" /> 
      </div>
-     
+
  </div>
- 
+
 </div>
 
- 
+
 
 <div id = phone>
   <h2>phone number</h2>
@@ -122,8 +125,8 @@ function second() {
 
    var a = document.getElementById("second");
    a.classList.remove("active");
-    
-   
+
+
  }
 
 </script>
