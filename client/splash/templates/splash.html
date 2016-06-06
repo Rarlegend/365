@@ -76,26 +76,18 @@
       </div>
 
       <div class="container" id="mainSlide" style="">
-        <!-- <div class="row">
-          <div class="col-md-12">
-            <h1>Don't let today disappear</h1>
-            <div id="buttonContainer">
-              <a class="waves-effect waves-light btn facebook-button" id="facebookSignButton"><i></i></a>
-              <p style="margin-bottom: 20px; margin-top:5px; color:black;"> or </p>
-              <a class="waves-effect waves-light btn signup-button" id="goSignupButton"><i></i></a>
-            </div>
-          </div>    
-        </div>  
-        <img class="icon-downbutton" src="images/scrollDownButtonSplash.png">
-        <p class="scrollDown" style="display:none">Scroll Down</p> -->
-          <img class="unselectable" id="mainSlideLogo" src="/images/keepspace_home_button.png">
-          <h1 id="mainSlidePhrase">Don't let today disappear</h1> 
-            <textarea id="newThoughtBox" class="form-control" name="text" rows="1" placeholder="How will you remember today?"></textarea>
-            <!-- <ul class="splashThoughts" style="height:550px; position: relative"> -->
-                {{#each splashThoughts}}
-                    {{>thought}}
-                {{/each}}
-            <!-- </ul> -->
+        
+        <img class="unselectable" id="mainSlideLogo" src="/images/keepspace_home_button.png">
+        <h1 id="mainSlidePhrase">Don't let today disappear</h1> 
+        <div id="textContainer">
+          <textarea id="splashThoughtBox" class="form-control" name="text" rows="1" placeholder="How will you remember today?"></textarea>
+        </div>
+        <ul class="splashThoughts" style="z-index:0">
+          {{#each splashThoughts}}
+              {{>thought}}
+          {{/each}}
+        </ul>   
+
       </div>
 
       <div class="container" id="signupOptionsSlide">

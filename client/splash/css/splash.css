@@ -19,6 +19,8 @@
 	background-position: center top;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+	z-index:1;
+	position:relative;
 }
 header h1{
 	color:black;
@@ -26,16 +28,31 @@ header h1{
 	text-transform:none;
 	font-weight:100;
 }
+#mainSlide{
+	z-index:0;
+	position:relative;
+}
 #mainSlideLogo{
     height: 100px;
     position: relative;
     top: 30px;
+    z-index:1;
 }
 #mainSlidePhrase{
     font-size: 36px;
     position: relative;
     top: 10px;
     color: #2FC1D2;
+    z-index:1;
+}
+#textContainer{
+	position:relative;
+	z-index:1;
+}
+#splashThoughtBox{
+	width: 500px;
+	margin-left: calc(50% - 250px) !important;
+    margin-top: 20px !important;
 }
 .navbar-nav{
 	width:25%;
