@@ -176,15 +176,17 @@ Template.splashBanner.events({
 	},
 	"submit .newThoughtSplash": function (event) {
 		event.preventDefault();
-		console.log("a");
+		$("#submitThoughtPopup").show();
 		return false;
 	},
 	"click #submitNewThoughtHome": function(event) {
 		event.preventDefault();
-		console.log('a');
+		$("#submitThoughtPopup").show();
 		return false
 	},
-
+	"click #closeSignupPopup": function(event){
+		$("#submitThoughtPopup").hide();
+	},
 });
 
 Template.splashBanner.helpers({

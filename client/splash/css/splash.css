@@ -64,6 +64,31 @@ header h1{
 	box-shadow: none;
 	background-color: #32c0d2;
 }
+#submitThoughtPopup{
+	position: absolute;
+	width: 70%;
+	background: white;
+	height: 220px;
+	top: 30px;
+	z-index: 2;
+	color: black;
+	left: 15%;
+	font: 300 100%/1.5em 'Lato', sans-serif;
+	display:none;
+}
+#closeSignupPopup{
+	position: absolute;
+	font-size: 3em;
+	color: gray;
+	cursor: pointer;
+    top: 7px;	
+}
+#signupText{
+	top: 20%;
+    position: relative;
+    font-size: 2em;
+    line-height: 1.2em;
+}
 .navbar-nav{
 	width:35%;
 	/*height:5.3em;*/
