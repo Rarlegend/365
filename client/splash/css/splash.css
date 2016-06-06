@@ -22,6 +22,12 @@
 	z-index:1;
 	position:relative;
 }
+#loginLink{
+	width: 100px;
+    position: absolute;
+    right: 5%;
+    margin-right:0px;
+}
 header h1{
 	color:black;
 	font-size:72px;
