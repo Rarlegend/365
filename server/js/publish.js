@@ -1,6 +1,6 @@
 Meteor.startup(function () {
-  Accounts.emailTemplates.from = 'do-not-reply@mykeepspace.com';
-  Accounts.emailTemplates.siteName = 'mykeepspace';
+  Accounts.emailTemplates.from = 'do-not-reply@thekeepspace.com';
+  Accounts.emailTemplates.siteName = 'thekeepspace';
 });
 
 Meteor.publish("thoughts", function () { // Only publish thoughts that are public or belong to the current user

@@ -6,7 +6,6 @@ var thoughtsList = [];
 
 Template.home.created = function() {
 	var self = this;
-
 	self.limit = new ReactiveVar;
 	self.limit.set(parseInt(Meteor.settings.public.recordsPerPage));
 	Tracker.autorun(function() {
@@ -118,20 +117,15 @@ Template.worldFeed.events({
 	}
 });
 
-
-//put in username
 Template.home.helpers({
-	username: function(event){
-		// if (Meteor.user()) {
-		//     var username = Meteor.user().username;
-		//     return username.split(" ")[0];
-		// }
-		console.log(Meteor.user());
-		var name = Meteor.user().profile.firstName;
-		if (!name){
-			name = Meteor.user().profile.name.split(" ")[0];
+	username: function(event) {
+		if (Meteor.user().profile.name != undefined) {
+			return Meteor.user().profile.name.split(" " || "@")[0];
+		} else if (Meteor.user().profile.firstName != undefined) {
+			return Meteor.user().profile.firstName;
+		} else {
+			return Meteor.user().username;
 		}
-		return name;
 	},
 	posts: function(event){
 		var thoughts = Thoughts.find({}, {sort: {createdAt: -1}});
@@ -145,19 +139,23 @@ Template.home.helpers({
 	}
 });
 
-//request facebook data
 Template.home.events({
 	'click' : function(event) {
-		if (Session.get("maximized")) {
-			//minimize selected bubble
+		if ((event.target.id != 'newThoughtBox' && event.target.id != 'submit-new-thought') &&
+		Session.get('newThoughtBox')) {
+			Session.set('newThoughtBox',false);
+			$('#newThoughtBox').animate({height: '34px'},300);
+			$('#time-container').animate({height: '65px'},300);
 		}
 	},
 	"click #submit-new-thought": function(event) {
 		console.log(event);
 		event.preventDefault();
+		if (Session.get('newThoughtBox') == true) {
+			Session.set('newThoughtBox',false);
+		}
 		// This function is called when the new thought form is submitted
 		var text = $("#newThoughtBox").val();
-
 		var thoughtId = Meteor.call("addThought", text, null,
 			function(err, data) {
 				if (err){
@@ -186,7 +184,6 @@ Template.home.events({
 				var thought = Thoughts.findOne({_id:data});
 				thoughtsList.push(thought);
 			});
-
 		// Clear form
 		$("#newThoughtBox").val("");
 		$('#newThoughtBox').animate({height: '34px'},300);
@@ -233,26 +230,29 @@ Template.home.events({
 		$(event.target).toggleClass("fa-caret-down fa-caret-up");
 	},
 	'focus #newThoughtBox': function(event) {
+		Session.set('newThoughtBox',true);
 		$('#newThoughtBox').animate({height: '150px'},300);
 		$('#time-container').animate({height: '200px'},300);
 	},
-	'blur #newThoughtBox .submit-new-thought': function(event, ui) {
+	'focusout #newThoughtBox #submit-new-thought': function(event, ui) {
+		Session.set('newThoughtBox',false);
 		$('#newThoughtBox').animate({height: '34px'},300);
 		$('#time-container').animate({height: '65px'},300);
 	},
 	'click .toggleFriendFeed': function() {
-		$('.flipper').removeClass('flipped');
+		$('.flipper').addClass('flipped');
 		setTimeout(function() {
-			Session.set('showFriendFeed', true);
+			Session.set('currentFeed', 'friendFeed');
+			Session.set('showFriendFeed', false);
 		},200);
 
 	},
 	'click .toggleWorldFeed': function() {
-		$('.flipper').addClass('flipped');
+		$('.flipper').removeClass('flipped');
 		setTimeout(function() {
-			Session.set('showFriendFeed', false);
+			Session.set('currentFeed','worldFeed');
+			Session.set('showFriendFeed', true);
 		},200);
-
 	}
 });
 
@@ -311,14 +311,14 @@ resetAllFeeds = function () {
 	delete Session.keys['leftqueue'];
 	delete Session.keys['centerqueue'];
 	delete Session.keys['rightqueue'];
-}
+};
 
 getFriends = function() {
 	var arr = Meteor.friends.find({userId:Meteor.userId()},{friendId: 1, _id:0}).fetch();
 	var distinctArr = _.uniq(arr, false, function(d) {
 		return d.friendId});
 	return _.pluck(distinctArr, 'friendId');
-}
+};
 
 var incrementLimit = function(templateInstance) {
 	var newLimit = templateInstance.limit.get() +
@@ -338,7 +338,7 @@ getFriendsAsUsers = function() {
 	// console.log(friendsAsUsers);
 	// console.log(friendsAsUsers);
 	return friendsAsUsers;
-}
+};
 
 getFriendIds = function() {
 	var friends = getFriendsAsUsers();
@@ -348,5 +348,11 @@ getFriendIds = function() {
 		friendIds.push(friends[i]._id);
 	}
 	return friendIds;
-}
+};
+
+getLastWeek = function (){
+	var today = new Date();
+	var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+	return lastWeek ;
+};
 
