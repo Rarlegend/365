@@ -144,8 +144,8 @@ Template.home.events({
 		if ((event.target.id != 'newThoughtBox' && event.target.id != 'submit-new-thought') &&
 		Session.get('newThoughtBox')) {
 			Session.set('newThoughtBox',false);
-			$('#newThoughtBox').animate({height: '34px'},300);
-			$('#time-container').animate({height: '65px'},300);
+			// $('#newThoughtBox').animate({height: '34px'},300);
+			// $('#time-container').animate({height: '65px'},300);
 		}
 	},
 	"click #submit-new-thought": function(event) {
@@ -167,8 +167,8 @@ Template.home.events({
 
 		// Clear form
 		$("#newThoughtBox").val("");
-		$('#newThoughtBox').animate({height: '34px'},300);
-		$('#time-container').animate({height: '65px'},300);
+		// $('#newThoughtBox').animate({height: '34px'},300);
+		// $('#time-container').animate({height: '65px'},300);
 		return false;
 	},
 	"submit .new-thought": function (event) {
@@ -186,8 +186,8 @@ Template.home.events({
 			});
 		// Clear form
 		$("#newThoughtBox").val("");
-		$('#newThoughtBox').animate({height: '34px'},300);
-		$('#time-container').animate({height: '65px'},300);
+		// $('#newThoughtBox').animate({height: '34px'},300);
+		// $('#time-container').animate({height: '65px'},300);
 		return false;
 	},
 	'click #btn-user-data': function(event) {
@@ -231,13 +231,13 @@ Template.home.events({
 	},
 	'focus #newThoughtBox': function(event) {
 		Session.set('newThoughtBox',true);
-		$('#newThoughtBox').animate({height: '150px'},300);
-		$('#time-container').animate({height: '200px'},300);
+		// $('#newThoughtBox').animate({height: '150px'},300);
+		// $('#time-container').animate({height: '200px'},300);
 	},
 	'focusout #newThoughtBox #submit-new-thought': function(event, ui) {
 		Session.set('newThoughtBox',false);
-		$('#newThoughtBox').animate({height: '34px'},300);
-		$('#time-container').animate({height: '65px'},300);
+		// $('#newThoughtBox').animate({height: '34px'},300);
+		// $('#time-container').animate({height: '65px'},300);
 	},
 	'click .toggleFriendFeed': function() {
 		$('.flipper').addClass('flipped');
