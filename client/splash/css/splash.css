@@ -47,14 +47,14 @@ header h1{
 #mainSlidePhrase{
 	font-size: 36px;
 	position: relative;
-	top: 60px;
+	top: 80px;
 	color: #2FC1D2;
 	z-index:0;
 }
 #textContainer{
 	position:relative;
 	z-index:1;
-	top:50px;
+	top:60px;
 }
 #splashThoughtBox{
 	width: 500px;
