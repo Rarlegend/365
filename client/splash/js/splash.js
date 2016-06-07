@@ -35,22 +35,33 @@ Template.splashBanner.events({
 	},
 	'click #splashBannerLogo': function(){ Router.go('splash');},
 	'click #facebookSignButton': function(){
+		var text = $("#splashThoughtBox").val();
+		// console.log(text);
 		Meteor.loginWithFacebook(
 			{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
 			'user_posts','publish_actions']}, 
 			function(err){
 					if (!err){
-					Session.set("isFB", true);
-					localStorage.setItem("justLoggedIn", "true");
-					resetAllFeeds();
-					Router.go("home");
+						Session.set("isFB", true);
+						localStorage.setItem("justLoggedIn", "true");
+						resetAllFeeds();
+						Router.go("home");
+						var thoughtId = Meteor.call("addThought", text, null,
+						function(err, data) {
+							if (err){
+								console.log(err);
+							}
+							var thought = Thoughts.findOne({_id:data});
+							thoughtsList.push(thought);
+						});
 						// $("#changePassword").hide();
 					}
 					else{
 						console.log(err);
 					}
 			}
-		)
+		);
+
 	},
 	'click #facebookLoginButton': function(){
 		Meteor.loginWithFacebook(
