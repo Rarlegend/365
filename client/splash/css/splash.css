@@ -92,11 +92,22 @@ nav.navbar.fixed-to-top{
     margin-top:7%;
 }
 #secondSlide{
-	background-color: #FABF80;
+	background-color: #FFFFFF;
 }
+
+#head1 {
+
+	color: #2AB5C8;
+}
+.title {
+
+	color: black;
+}
+
 #secondSlideContainer{
     padding-left: 4%;
     width: 100%;
+
 }
 #thirdSlide{
 	background-color: #FFFFFF;
@@ -145,7 +156,7 @@ nav.navbar.fixed-to-top{
     margin-bottom:11%;
 }
 #signupButton{
-	
+
 }
 #homeSignupButton{
 
@@ -198,11 +209,13 @@ nav.navbar.fixed-to-top{
 #keepIcon{
 	height:40px;
 }
+
 .cultivateElement{
-	display:inline-block;
+  display:inline-block;
 	width:365px;
-	/*fsloat:left;*/
+
 }
+
 .cultivateElement .title{
 	font-size: 1.6em;
 	text-align: left;
@@ -223,6 +236,11 @@ nav.navbar.fixed-to-top{
 .cultivateRow{
 	margin-bottom:4%;
 }
+
+#pain {
+	margin: 10px;
+}
+
 #shareIcon{
 	position:relative;
 	left:10px;
