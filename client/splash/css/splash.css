@@ -210,6 +210,13 @@ nav.navbar.fixed-to-top{
 	height:40px;
 }
 
+.cultivateElementOriginal{
+  display:inline-block;
+	width:270px;
+
+}
+
+
 .cultivateElement{
   display:inline-block;
 	width:365px;
@@ -238,7 +245,7 @@ nav.navbar.fixed-to-top{
 }
 
 #pain {
-	margin: 10px;
+	margin-bottom: 20px;
 }
 
 #shareIcon{
