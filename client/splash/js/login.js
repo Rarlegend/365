@@ -11,6 +11,7 @@ Template.loginPage.events({
 					Session.set("isFB", true);
 					localStorage.setItem("justLoggedIn", true);
 					resetAllFeeds();
+					console.log(Meteor.user())
 					Router.go("home");
 			      // $("#changePassword").hide();
 			    }

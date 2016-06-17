@@ -65,22 +65,7 @@ Template.splashBanner.events({
 		);
 	},
 	'click #facebookLoginButton': function(){
-		Meteor.loginWithFacebook(
-			{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-			'user_posts','publish_actions']}, 
-			function(err){
-					if (!err){
-					Session.set("isFB", true);
-					localStorage.setItem("justLoggedIn", "true");
-					resetAllFeeds();
-					Router.go("home");
-						// $("#changePassword").hide();
-					}
-					else{
-						console.log(err);
-					}
-			}
-		)
+		loginWithFacebook();
 	},
 	'click #topSlide':function(event){
 		$(".signOptions").hide();
@@ -98,27 +83,7 @@ Template.splashBanner.events({
 		event.stopPropagation();
 	},
 	'click #loginLink': function(event){
-		// event.stopPropagation();
-		// $(".signOptions").hide();
-		// // $(".signupEmail").val("");
-		// $("#mainSlide").hide();
-		// $("#navLoginOption").show();
-		Meteor.loginWithFacebook(
-			{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-			'user_posts','publish_actions']}, 
-			function(err){
-					if (!err){
-					Session.set("isFB", true);
-					localStorage.setItem("justLoggedIn", "true");
-					resetAllFeeds();
-					Router.go("home");
-						// $("#changePassword").hide();
-					}
-					else{
-						console.log(err);
-					}
-			}
-		)
+		loginWithFacebook();
 	},
 	'click #signupLink': function(event){
 		event.stopPropagation();
@@ -275,4 +240,40 @@ function validateEmail(email) {
 function em(input) {
 		var emSize = parseFloat($("body").css("font-size"));
 		return (emSize * input);
+}
+
+function loginWithFacebook(){
+	Meteor.loginWithFacebook(
+		{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
+		'user_posts','publish_actions']}, 
+		function(err){
+			if (!err){
+			Session.set("isFB", true);
+			localStorage.setItem("justLoggedIn", "true");
+			resetAllFeeds();
+			Router.go("home");
+			console.log(Meteor.user());
+			Meteor.call('getFBUserData', function(err, data) {
+				// console.log(JSON.stringify(data, undefined, 4));
+			});
+			Meteor.call('getFBPostData', function(err, data) {
+				// console.log("post data");
+				// console.log(data);
+				// console.log(JSON.stringify(data, undefined, 4));
+				// console.log(data["data"]);
+				//check whose post it is using
+				//data[(post number)][from][name]
+				//only want the one's from the user
+			});
+			Meteor.call('getFBFriendData', function(err, data){
+				var data = JSON.stringify(data, undefined, 4);
+				console.log(data);
+			});
+				// $("#changePassword").hide();
+			}
+			else{
+				console.log(err);
+			}
+		}
+	)	
 }

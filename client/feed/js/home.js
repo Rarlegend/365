@@ -33,6 +33,19 @@ Template.home.onRendered(function(){
 			incrementLimit(self);
 		}
 	});
+	Meteor.call('getFBFriendData', 0, function(err, data){
+		// var data = JSON.stringify(data, undefined, 4);
+		var numFriends = data["summary"]["total_count"];
+		console.log(data);
+		console.log(numFriends);
+		Meteor.call('getFBFriendData', numFriends, function(err, data){
+			var results = data["data"]
+			for(var i = 0; i < results.length; i++){
+				var friend = results[i];
+				console.log(friend);
+			}
+		});
+	});
 });
 
 window.onload = function(event){ // Website has loaded
