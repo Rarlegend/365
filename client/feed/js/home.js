@@ -33,16 +33,23 @@ Template.home.onRendered(function(){
 			incrementLimit(self);
 		}
 	});
+	console.log(Meteor.user());
 	Meteor.call('getFBFriendData', 0, function(err, data){
 		// var data = JSON.stringify(data, undefined, 4);
+
 		var numFriends = data["summary"]["total_count"];
 		console.log(data);
 		console.log(numFriends);
 		Meteor.call('getFBFriendData', numFriends, function(err, data){
 			var results = data["data"]
+			var friendList = {
+				'profile.fbFriendList' : results
+			}
+			Meteor.users.update(Meteor.userId(), {$set: friendList});
+			console.log(results);
 			for(var i = 0; i < results.length; i++){
 				var friend = results[i];
-				console.log(friend);
+				var friendID = friend.id;
 			}
 		});
 	});
