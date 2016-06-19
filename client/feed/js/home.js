@@ -33,26 +33,42 @@ Template.home.onRendered(function(){
 			incrementLimit(self);
 		}
 	});
-	console.log(Meteor.user());
-	Meteor.call('getFBFriendData', 0, function(err, data){
-		// var data = JSON.stringify(data, undefined, 4);
 
+	Meteor.call('getFBFriendData', 0, function(err, data){
 		var numFriends = data["summary"]["total_count"];
-		console.log(data);
-		console.log(numFriends);
 		Meteor.call('getFBFriendData', numFriends, function(err, data){
 			var results = data["data"]
 			var friendList = {
 				'profile.fbFriendList' : results
 			}
+			var oldFriendList = Meteor.user().profile.fbFriendList;
 			Meteor.users.update(Meteor.userId(), {$set: friendList});
-			console.log(results);
+			var myID = Meteor.user()._id
 			for(var i = 0; i < results.length; i++){
 				var friend = results[i];
-				var friendID = friend.id;
+				//need to make sure we didn't already add this friend in
+				if (!friendContains(oldFriendList, friend)){
+					var friendID = friend.id;
+					var friendAsUser = Meteor.users.findOne({facebookID:friendID});
+					//make sure this user exists before attempting to add
+					if (friendAsUser != null){
+						friendUserID = friendAsUser._id
+						Meteor.friends.insert({
+							'userId': myID,
+							'friendId': friendUserID,
+							'date': new Date()
+						});
+						Meteor.friends.insert({
+							'userId': friendUserID,
+							'friendId': myID,
+							'date': new Date()
+						});
+					}
+				}
 			}
 		});
 	});
+
 });
 
 window.onload = function(event){ // Website has loaded
@@ -375,4 +391,13 @@ getLastWeek = function (){
 	var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
 	return lastWeek ;
 };
+
+friendContains = function (a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i].id === obj.id) {
+            return true;
+        }
+    }
+    return false;
+}
 
