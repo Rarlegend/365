@@ -21,8 +21,8 @@
     <!-- permanent navbar -->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+           <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -51,7 +51,7 @@
 
      <!-- HEADER
      ================================================== -->
-    <header name="topSlide" id="topSlide" style="width: 100%; padding: 15px;">
+    <section name="topSlide" id="topSlide" style="width: 100%; padding: 15px;">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -62,7 +62,7 @@
 
           <!--Replace text with your app name or logo image-->
           <!-- <div id="logo" href="#"> -->
-            <img class="unselectable" id="splashLogo" src="/images/keepspace_home_button.png">
+        <!--    <img class="unselectable" id="splashLogo" src="/images/keepspace_home_button.png"> -->
           <!-- </div> -->
 
         </div>
@@ -75,20 +75,37 @@
           </ul>
       </div>
 
-      <div class="container" id="mainSlide" style="">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Don't let today disappear</h1>
+      <div class="container" id="mainSlide">
+        <div class="row" >
+          <img id="centerLogo" src="/images/keepspace-logo-blue.png">
+
             <!--<img style="margin-bottom:2%;" src="images/signupwithfbbutton.png" class="landingButton" id="facebookSignButton">-->
             <!-- <img src="images/signupbutton.png" id="facebookSignButton"> -->
-            <div id="buttonContainer">
+            <!--<div id="buttonContainer">
               <a class="waves-effect waves-light btn facebook-button" id="facebookSignButton"><i></i></a>
               <p style="margin-bottom: 20px; margin-top:5px; color:black;"> or </p>
               <a class="waves-effect waves-light btn signup-button" id="goSignupButton"><i></i></a>
             </div>
+          -->
             <!--<img src="images/signupherebutton.png" class="landingButton" id="goSignupButton">-->
-          </div>
+            <p id="centerText"> Today is the beginning of your journey to mindfulness. </p>
+            <input type="text" id="centerTextBox" value="Tell us something about your day."
+                onclick="if(this.value=='Tell us something about your day.'){this.value=''; this.style.color='#000'; this.style.borderColor='#000';}"
+                onblur="if(this.value==''){this.value='Tell us something about your day.'; this.style.color='#999999'; this.style.borderColor='#999999';}" />
+
+                <div id="circle5"></div>
         </div>
+
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+        <div id="circle3"></div>
+        <div id="circle4"></div>
+        <div id="circle6"></div>
+        <div id="circle7"></div>
+        <div id="circle8"></div>
+        <div id="circle9"></div>
+        <div id="circle10"></div>
+
         <img class="icon-downbutton" src="images/scrollDownButtonSplash.png">
         <p class="scrollDown" style="display:none">Scroll Down</p>
       </div>
@@ -159,7 +176,7 @@
       <span class="arrow"></span> -->
       <!-- <span class="hint">scroll</span> -->
       <!-- </a> -->
-    </header>
+    </section>
 
 
     <!-- PURCHASE
