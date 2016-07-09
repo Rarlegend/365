@@ -140,7 +140,12 @@
 }
 #inputRow .input-field label.active{
 	font-size:1em;
+	left:0;
 }
+#inputRow .input-field label{
+	left:0;
+}
+
 #btn-import-facebook {
 	position: absolute;
 	left: 1px;
