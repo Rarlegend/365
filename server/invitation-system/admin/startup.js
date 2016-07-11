@@ -6,11 +6,38 @@ Meteor.startup(function () {
     var splashThoughtThree = "Don't confuse my personality with my attitude. My personality is who I am. My attitude depends on who you are. ";
 
     var splashThoughtFour = "I'm not a politician but I could run the country into the ground way better than any of these candidates";
+
+    var hiThoughtOne = "Hi1";
+
+    var hiThoughtTwo= "Hi2";
+
+    var hiThoughtThree = "Hi3";
+
+    var hiThoughtFour = "Hi4";
+
+    var hiThoughtFive = "Hi5";
+
+    var hiThoughtSix = "Hi6";
+
+    var hiThoughtSeven = "Hi7";
+
+    var hiThoughtEight = "Hi8";
+
     SplashThoughts.remove({});
+    HiThoughts.remove({});
+    Meteor.call("addHiThought", hiThoughtOne, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtTwo, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtThree, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtFour, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtFive, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtSix, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtSeven, "Keepspace");
+    Meteor.call("addHiThought", hiThoughtEight, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtOne, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtTwo, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtThree, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtFour, "Keepspace");
+
     Accounts.emailTemplates.from = 'admin@thekeepspace.com';
     Accounts.emailTemplates.siteName = 'thekeepspace';
     var checkUser, i, id, len, results, user, users;
@@ -47,4 +74,3 @@ Meteor.startup(function () {
     }
     return results;
 });
-

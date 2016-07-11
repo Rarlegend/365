@@ -1,4 +1,5 @@
 Meteor.subscribe("splashThoughts");
+Meteor.subscribe("hiThoughts");
 Meteor.subscribe("users");
 
 Template.splashBanner.events({
@@ -10,16 +11,16 @@ Template.splashBanner.events({
     },
 	'click #teamLink': function() {
     event.preventDefault();
-    $("body, html").animate({ 
+    $("body, html").animate({
         scrollTop: $("#teamSlide").offset().top - em(5.3)
     }, 800);
   },
   'click #fixedLoginLink': function(){
     event.stopPropagation();
-    $("body, html").animate({ 
+    $("body, html").animate({
         scrollTop: $("#topSlide").offset().top
     }, 800);
-    
+
     $(".signOptions").hide();
     // $(".signupEmail").val("");
     $("#mainSlide").hide();
@@ -27,10 +28,10 @@ Template.splashBanner.events({
   },
   'click #fixedSignupLink': function(){
     event.stopPropagation();
-    $("body, html").animate({ 
+    $("body, html").animate({
         scrollTop: $("#topSlide").offset().top
     }, 800);
-    
+
     $(".signOptions").hide();
     $("#mainSlide").hide();
     $("#navSignupOption").show();
@@ -41,7 +42,7 @@ Template.splashBanner.events({
   'click #facebookSignButton': function() {
     Meteor.loginWithFacebook(
       {requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-      'user_posts','publish_actions']}, 
+      'user_posts','publish_actions']},
       function(err){
           if (!err){
           Session.set("isFB", true);
@@ -59,7 +60,7 @@ Template.splashBanner.events({
   'click #facebookLoginButton': function(){
     Meteor.loginWithFacebook(
       {requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-      'user_posts','publish_actions']}, 
+      'user_posts','publish_actions']},
       function(err){
           if (!err){
           Session.set("isFB", true);
@@ -169,7 +170,7 @@ Template.splashBanner.events({
   },
   'click .scrollDown': function(event){
     event.preventDefault();
-    $("body, html").animate({ 
+    $("body, html").animate({
         scrollTop: $("#secondSlide").offset().top - em(5.3)
     }, 800);
   },
@@ -179,7 +180,13 @@ Template.splashBanner.events({
 Template.splashBanner.helpers({
     'splashThoughts' : function () {
         return SplashThoughts.find({});
-    }
+    },
+
+		'hiThoughts' : function () {
+			return HiThoughts.find({});
+		}
+
+
 });
 
 Template.splashBanner.onRendered(function(){
@@ -213,6 +220,28 @@ Template.splashBanner.onRendered(function(){
         // console.log("b");
     });
   });
+	$.keyframe.define([{
+	name: animationName,
+	'0%': {
+			'transform': 'translatex(0px) translatey(0px)'
+	},
+	'12.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) +'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'37.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'62.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'87.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'100%': {
+			'transform': 'translatex(0px) translatey(0px)'
+	}
+	}]);
+
 });
 
 var trimInput = function(val) {

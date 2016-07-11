@@ -12,6 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
     <!-- Template Styles -->
     <!-- <link href="css/style.css" rel="stylesheet" media="screen"> -->
+
       </head>
   <body>
 
@@ -75,44 +76,33 @@
           </ul>
       </div>
 
-      <div class="container" id="mainSlide">
-        <div class="row" >
-          <img id="centerLogo" src="/images/keepspace-logo-blue.png">
+      <div class="container" id="mainSlide" >
+       <div  style="height: 550px;">
+         <img id="centerLogo" src="/images/keepspace-logo-blue.png">
 
-            <!--<img style="margin-bottom:2%;" src="images/signupwithfbbutton.png" class="landingButton" id="facebookSignButton">-->
-            <!-- <img src="images/signupbutton.png" id="facebookSignButton"> -->
-            <!--<div id="buttonContainer">
-              <a class="waves-effect waves-light btn facebook-button" id="facebookSignButton"><i></i></a>
-              <p style="margin-bottom: 20px; margin-top:5px; color:black;"> or </p>
-              <a class="waves-effect waves-light btn signup-button" id="goSignupButton"><i></i></a>
-            </div>
-          -->
-            <!--<img src="images/signupherebutton.png" class="landingButton" id="goSignupButton">-->
-            <p id="centerText"> Today is the beginning of your journey to mindfulness. </p>
-            <input type="text" id="centerTextBox" value="Tell us something about your day."
-                onclick="if(this.value=='Tell us something about your day.'){this.value=''; this.style.color='#000'; this.style.borderColor='#000';}"
-                onblur="if(this.value==''){this.value='Tell us something about your day.'; this.style.color='#999999'; this.style.borderColor='#999999';}" />
+           <!--<img style="margin-bottom:2%;" src="images/signupwithfbbutton.png" class="landingButton" id="facebookSignButton">-->
+           <!-- <img src="images/signupbutton.png" id="facebookSignButton"> -->
+           <!--<div id="buttonContainer">
+             <a class="waves-effect waves-light btn facebook-button" id="facebookSignButton"><i></i></a>
+             <p style="margin-bottom: 20px; margin-top:5px; color:black;"> or </p>
+             <a class="waves-effect waves-light btn signup-button" id="goSignupButton"><i></i></a>
+           </div>
+         -->
+           <!--<img src="images/signupherebutton.png" class="landingButton" id="goSignupButton">-->
+           <p id="centerText"> Today is the beginning of your journey to mindfulness. </p>
+           <input type="text" id="centerTextBox" value="Tell us something about your day."
+               onclick="if(this.value=='Tell us something about your day.'){this.value=''; this.style.color='#000'; this.style.borderColor='#000';}"
+               onblur="if(this.value==''){this.value='Tell us something about your day.'; this.style.color='#999999'; this.style.borderColor='#999999';}" />
 
-                <div id="circle5"></div>
-                <div id="Keep">Keep</div>
+               <div id="Keep">Keep</div>
+            <ul class="hiThoughts" >
+               {{#each hiThoughts}}
+                    {{>thought}}
+                {{/each}}
+            </ul>
         </div>
 
-        <div id="circle1"></div>
-        <div id="circle2"></div>
-        <div id="circle3"></div>
-        <div id="circle4">
-           <br>Live. <br> Love. <br> Laugh.
-        </div>
-        <div id="circle6">
-          <br>Live. <br> Love. <br> Laugh.
-        </div>
-        <div id="circle7">
-          <br>Live. <br> Love. <br> Laugh.
-        </div>
-        <div id="circle8"></div>
-        <div id="circle9">
-        <br>Cherish<br>the present.</div>
-        <div id="circle10"></div>
+
 
         <img class="icon-downbutton" src="images/scrollDownButtonSplash.png">
         <p class="scrollDown" style="display:none">Scroll Down</p>
@@ -287,10 +277,10 @@
     </section>
 
  <section name="thirdSlide" class="landingSection" id="thirdSlide" style="/*position:absolute*/">
-        <h1>Create your mindful masterpiece</h1>
+       <h1>Create your mindful masterpiece</h1>
        <div class="container" id="thirdSlideSlideContainer" style="height: 550px;">
-            <ul class="splashThoughs" style="height:550px; position: relative">
-                {{#each splashThoughts}}
+            <ul class="splashThoughts" style="height:550px; position: relative">
+               {{#each splashThoughts}}
                     {{>thought}}
                 {{/each}}
             </ul>
