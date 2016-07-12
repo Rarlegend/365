@@ -192,7 +192,8 @@ Template.home.events({
 		}
 		// This function is called when the new thought form is submitted
 		var text = $("#newThoughtBox").val();
-		var thoughtId = Meteor.call("addThought", text, null,
+		var question = $("#inputRow .input-field label").text();
+		var thoughtId = Meteor.call("addThought", text, question, null,
 			function(err, data) {
 				if (err){
 					console.log(err);
@@ -211,8 +212,8 @@ Template.home.events({
 		event.preventDefault();
 		// This function is called when the new thought form is submitted
 		var text = $("#newThoughtBox").val();
-
-		var thoughtId = Meteor.call("addThought", text, null,
+		var question = $("#inputRow .input-field label").text();
+		var thoughtId = Meteor.call("addThought", text, question, null,
 			function(err, data) {
 				if (err){
 					console.log(err);
@@ -289,6 +290,12 @@ Template.home.events({
 			Session.set('currentFeed','worldFeed');
 			Session.set('showFriendFeed', true);
 		},200);
+	},
+	'click #refreshQuestion': function(){
+		$("#inputRow .input-field label").text("New question");
+	},
+	'click #freeWrite': function(){
+		$("#inputRow .input-field label").text("Free write");
 	}
 });
 
