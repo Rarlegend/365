@@ -652,6 +652,9 @@ Template.thought.helpers({
     },
     day: function (event) {
         var newDate = new Date(this.createdAt);
-        return "Day " + newDate.getDOY();
+        return newDate.getDOY();
+    },
+    question: function(event){
+        return this.question;
     }
 });
