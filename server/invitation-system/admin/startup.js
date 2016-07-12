@@ -7,21 +7,21 @@ Meteor.startup(function () {
 
     var splashThoughtFour = "I'm not a politician but I could run the country into the ground way better than any of these candidates";
 
-    var hiThoughtOne = "Hi1";
+    var hiThoughtOne = "Who or what made you smile today?";
 
-    var hiThoughtTwo= "Hi2";
+    var hiThoughtTwo= "Who challenged you today?";
 
-    var hiThoughtThree = "Hi3";
+    var hiThoughtThree = "If you had a chance to be a teacher, what class would you teach?";
 
-    var hiThoughtFour = "Hi4";
+    var hiThoughtFour = "Tell us something you learned about a friend today.";
 
-    var hiThoughtFive = "Hi5";
+    var hiThoughtFive = "When did you feel most proud of yourself today?";
 
-    var hiThoughtSix = "Hi6";
+    var hiThoughtSix = "Did you have a moment of conflict today? Tell us about it.";
 
-    var hiThoughtSeven = "Hi7";
+    var hiThoughtSeven = "Is there any part of today you would redo?";
 
-    var hiThoughtEight = "Hi8";
+    var hiThoughtEight = "Did you run into someone you might have a crush on? Explain why you like them.";
 
     SplashThoughts.remove({});
     HiThoughts.remove({});
