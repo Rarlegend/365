@@ -172,6 +172,10 @@ Template.home.helpers({
 	},
 	'images': function() {
 		return Images.find({}, {sort:{uploadedAt:-1}});
+	},
+	question: function(){
+		var element = getRandomQuestion();
+		return element.text;
 	}
 });
 
@@ -292,7 +296,9 @@ Template.home.events({
 		},200);
 	},
 	'click #refreshQuestion': function(){
-		$("#inputRow .input-field label").text("New question");
+		var element = getRandomQuestion();
+		$("#inputRow .input-field label").text(element.text);
+
 	},
 	'click #freeWrite': function(){
 		$("#inputRow .input-field label").text("Free write");
@@ -400,11 +406,20 @@ getLastWeek = function (){
 };
 
 friendContains = function (a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i].id === obj.id) {
-            return true;
-        }
-    }
-    return false;
+	for (var i = 0; i < a.length; i++) {
+		if (a[i].id === obj.id) {
+			return true;
+		}
+	}
+	return false;
+}
+
+getRandomQuestion = function(){
+	var array = Questions.find().fetch();
+	// console.log(array);
+	var randomIndex = Math.floor( Math.random() * array.length );
+	var element = array[randomIndex];
+	// console.log(element);
+	return element;
 }
 

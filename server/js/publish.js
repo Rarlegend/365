@@ -16,6 +16,10 @@ Meteor.publish("splashThoughts", function() {
     return SplashThoughts.find({});
 });
 
+Meteor.publish("Questions", function() {
+    return Questions.find({});
+});
+
 Meteor.publish("users", function() {
     return Meteor.users.find({});
 });

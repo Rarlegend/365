@@ -151,9 +151,11 @@
 #inputRow .input-field label.active{
 	font-size:1em;
 	left:0;
+	top:40px;
 }
 #inputRow .input-field label{
 	left:0;
+	max-width: 80%
 }
 
 #btn-import-facebook {

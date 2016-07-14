@@ -1,5 +1,6 @@
 Meteor.subscribe("splashThoughts");
 Meteor.subscribe("users");
+Meteor.subscribe("Questions");
 
 Template.splashBanner.events({
 	'click #loginLink': function(){
@@ -48,7 +49,7 @@ Template.splashBanner.events({
 						localStorage.setItem("justLoggedIn", "true");
 						resetAllFeeds();
 						Router.go("home");
-						var thoughtId = Meteor.call("addThought", text, null,
+						var thoughtId = Meteor.call("addThought", text, "How will you remember today?", null,
 						function(err, data) {
 							if (err){
 								console.log(err);
