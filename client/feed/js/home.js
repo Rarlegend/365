@@ -175,6 +175,15 @@ Template.home.helpers({
 	},
 	question: function(){
 		var element = getRandomQuestion();
+		var changeHeight = false;
+		(function wait() {
+			if (changeHeight) {
+				$("#spacer").height($("#inputRow .input-field label").height())
+			} else {
+				changeHeight = true;
+				setTimeout(wait, 50);
+			}
+		})();
 		return element.text;
 	}
 });
@@ -298,10 +307,12 @@ Template.home.events({
 	'click #refreshQuestion': function(){
 		var element = getRandomQuestion();
 		$("#inputRow .input-field label").text(element.text);
+		$("#spacer").height($("#inputRow .input-field label").height())
 
 	},
 	'click #freeWrite': function(){
 		$("#inputRow .input-field label").text("Free write");
+		$("#spacer").height($("#inputRow .input-field label").height())
 	}
 });
 
@@ -416,10 +427,8 @@ friendContains = function (a, obj) {
 
 getRandomQuestion = function(){
 	var array = Questions.find().fetch();
-	// console.log(array);
 	var randomIndex = Math.floor( Math.random() * array.length );
 	var element = array[randomIndex];
-	// console.log(element);
 	return element;
 }
 

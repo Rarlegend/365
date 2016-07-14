@@ -131,15 +131,23 @@
 	box-shadow: none;
 	background-color: #32c0d2;
 }
-#questionActions{
+/*#questionActions{
 	position: relative;
     top: 15px;
     z-index:10;
-}
+}*/
 .questionActionIcon{
-	float: right;
     margin-right: 10px;
     cursor:pointer;
+    position:relative;
+    top:15px;
+    z-index:10;
+}
+#refreshQuestion{
+	float:right;
+}
+#freeWrite{
+	float:left;
 }
 #inputRow{
 	margin-left: -30%;
@@ -147,17 +155,28 @@
 }
 #inputRow textarea{
 	font-size:1em !important;
+	padding-bottom: 0rem !important;
 }
 #inputRow .input-field label.active{
-	font-size:1em;
+	/*font-size:1em;
 	left:0;
-	top:40px;
+	top:40px;*/
+	color: #9e9e9e;
+    position: absolute;
+    top: 0.8rem;
+    font-size: 1rem;
+    text-align:left;
+    cursor:pointer;
+    transform:none;
+    max-width: 80%;
+    left: 2.5em;
 }
 #inputRow .input-field label{
-	left:0;
-	max-width: 80%
+	left: 2.5em;
+	max-width: 80%;
+	text-align:left;
+	cursor:pointer;
 }
-
 #btn-import-facebook {
 	position: absolute;
 	left: 1px;
