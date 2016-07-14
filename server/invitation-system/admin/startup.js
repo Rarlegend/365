@@ -7,21 +7,21 @@ Meteor.startup(function () {
 
     var splashThoughtFour = "I'm not a politician but I could run the country into the ground way better than any of these candidates";
 
-    var hiThoughtOne = "Who or what made you smile today?";
+    var hiThoughtOne = "Who or what made you smile today?\n\n" + splashThoughtOne;
 
-    var hiThoughtTwo= "Who challenged you today?";
+    var hiThoughtTwo= "Who challenged you today?\n\nWork had me thinking a lot about my relationship with my boss today. I've gotta remember that it's my job to make him look as good as possible. Even if I don't get credit immediately, It'll all work out in the end.";
 
-    var hiThoughtThree = "If you had a chance to be a teacher, what class would you teach?";
+    var hiThoughtThree = "If you had a chance to be a teacher, what class would you teach?\n\nI would definitely teach economics. I think it's super important for understanding how the world works...but then again, I'm a chemistry need and that would be a lot more fun haha.";
 
-    var hiThoughtFour = "Tell us something you learned about a friend today.";
+    var hiThoughtFour = "Tell us something you learned about a friend today.\n\nI found out Antonia used to rock climb religiously in college. Funny because I rock climb and I never knew that. Small world.";
 
-    var hiThoughtFive = "When did you feel most proud of yourself today?";
+    var hiThoughtFive = "When did you feel most proud of yourself today?\n\nI got through my last day of company training today. I made it without doing anything too stupid which is huge for me lol.";
 
-    var hiThoughtSix = "Did you have a moment of conflict today? Tell us about it.";
+    var hiThoughtSix = "Did you have a moment of conflict today? Tell us about it.\n\nI realized today I have to pivot my career, even if it means leaving the paycheck and security. I've learned everything I can, now it's time to move on. I'm just happy I've made this realization before wasting too much time.";
 
-    var hiThoughtSeven = "Is there any part of today you would redo?";
+    var hiThoughtSeven = "Is there any part of today you would redo?\n\nI have no regrets today. It was a great one.";
 
-    var hiThoughtEight = "Did you run into someone you might have a crush on? Explain why you like them.";
+    var hiThoughtEight = "Did you run into someone you might have a crush on? Explain why you like them.\n\nYep, in nyc I fall in love literally every day. Especially when going through the crosswalk.";
 
     SplashThoughts.remove({});
     HiThoughts.remove({});
