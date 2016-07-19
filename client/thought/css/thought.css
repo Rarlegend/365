@@ -62,18 +62,19 @@
     text-overflow: ellipsis;
     overflow-y: hidden;
     word-wrap: break-word;
+
 }
 
-.text-expanded {
+.text-expanded  {
     position: relative;
     /*display: block;*/
     color: white;
+    padding-bottom: 15px;
     /*margin-top: 0px;
     /*margin: 0 auto;
     outline: solid;
     outline-color: white;
     */
-    height: inherit;
     width: calc(100% - 33%);
     /*vertical-align: middle;*/
     /*horiz-align: middle;*/
@@ -185,7 +186,9 @@ input.button-add {
 
 .text-container {
     display: block;
-}
+    overflow-y: auto;
+    width: calc(100% - 33%);
+  }
 
 .button-container {
     display: block;
@@ -287,4 +290,8 @@ input.button-add {
 }
 .cloned-worldFeed .thought:before {
     /*content: attr(data-pos);*/
+}
+
+.text-question{
+  display: none;
 }

@@ -581,7 +581,7 @@ Template.thought.events({
             height: radius,
             borderRadius: radius
         });
-        $(bubble.children().get(1)).removeClass('text');
+      $(bubble.children().get(1)).removeClass('text');
         $(bubble.children().get(1)).addClass('text-container');
         $(bubble.children().get(1)).css({
             'display' : 'block',
@@ -626,6 +626,7 @@ Template.thought.events({
         }
         bubble.toggleClass('condensed expanded');
         text.get(0).className = 'text-expanded';
+      text.get(1).className = 'text-expanded';
         text.css({'left': (radius - (radius * Math.cos(0.785398))) + 'px'});
         text.fadeOut(function(){
             text.fadeIn();
@@ -658,10 +659,12 @@ Template.thought.events({
             });
         }
         bubble.toggleClass('condensed expanded');
-        $(bubble.children().get(1)).removeClass('text-container');
+      $(bubble.children().get(1)).removeClass('text-container');
         $(bubble.children().get(1)).addClass('text');
-        text.get(0).className = 'text-inner';
-        $(text.get(0)).removeAttr('style');
+          text.get(0).className = 'text-question';
+          text.get(1).className = 'text-inner';
+          $(text.get(0)).removeAttr('style');
+          $(text.get(1)).removeAttr('style');
         $(bubble.children().get(1)).removeAttr('style');
         author.toggleClass('header-show header-hide');
         author.removeAttr('style');
