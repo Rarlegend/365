@@ -2,7 +2,6 @@ Meteor.subscribe("splashThoughts");
 Meteor.subscribe("hiThoughts");
 Meteor.subscribe("users");
 Meteor.subscribe("Questions");
-
 Template.splashBanner.events({
 	'click #loginLink': function(){
 		Router.go("loginPage");
@@ -195,27 +194,27 @@ Template.splashBanner.helpers({
 Template.splashBanner.onRendered(function(){
 	$(".alertDiv").click(closeAlert);
 	$(".closeAlert").click(closeAlert);
-	// $.keyframe.define([{
-	// name: animationName,
-	// '0%': {
-	// 		'transform': 'translatex(0px) translatey(0px)'
-	// },
-	// '12.5%': {
-	// 		'transform': 'translatex(' + (randDir() * (getRandom(5,10))) +'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
-	// },
-	// '37.5%': {
-	// 		'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
-	// },
-	// '62.5%': {
-	// 		'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
-	// },
-	// '87.5%': {
-	// 		'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
-	// },
-	// '100%': {
-	// 		'transform': 'translatex(0px) translatey(0px)'
-	// }
-	// }]);
+	$.keyframe.define([{
+	name: animationName,
+	'0%': {
+			'transform': 'translatex(0px) translatey(0px)'
+	},
+	'12.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) +'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'37.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'62.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'87.5%': {
+			'transform': 'translatex(' + (randDir() * (getRandom(5,10))) + 'px) translatey(' + (randDir() * (getRandom(5,10))) + 'px)'
+	},
+	'100%': {
+			'transform': 'translatex(0px) translatey(0px)'
+	}
+	}]);
 	$("#splashThoughtBox").keypress(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
 		if (code == 13){
