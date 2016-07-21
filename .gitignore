@@ -13,6 +13,10 @@
 # .idea/dictionaries
 # .idea/shelf
 
+## Node stuff:
+node_modules/*
+node_modules
+
 # Sensitive or high-churn files:
 # .idea/dataSources.ids
 # .idea/dataSources.xml

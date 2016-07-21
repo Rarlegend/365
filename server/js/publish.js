@@ -19,6 +19,9 @@ Meteor.publish("splashThoughts", function() {
 Meteor.publish("hiThoughts", function() {
     return HiThoughts.find({});
 });
+Meteor.publish("Questions", function() {
+    return Questions.find({});
+});
 
 Meteor.publish("users", function() {
     return Meteor.users.find({});

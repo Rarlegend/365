@@ -16,68 +16,27 @@ Template.header.events({
     'click .icon-bellnavbar': function(){
         Router.go("notifications");
     },
-    'click #settingsButton': function(event){
-        event.preventDefault();
-        // $("#settingDropDown").toggle();
-        if ($("#settingDropDown").css("display") == "none"){
-            $("#settingDropDown").css("display", "inline-block");
-        }
-        else{
-            $("#settingDropDown").css("display", none);
-        }
-    },
+    // 'click #settingsButton': function(event){
+    //     console.log(Meteor.user());
+    //     event.preventDefault();
+    //     // $("#settingDropDown").toggle();
+    //     if ($("#settingDropDown").css("display") == "none"){
+    //         $("#settingDropDown").css("display", "inline-block");
+    //     }
+    //     else{
+    //         $("#settingDropDown").css("display", none);
+    //     }
+    // },
     'click .logout': function(event){
         event.preventDefault();
         Router.go('logout');
     },
-    'click .dropdownAbout': function(event){
-        Router.go("mainAbout");
+    'click .dropdownSettings': function(event){
+        hideMainMenu();
+        Router.go("settings");
     },
     'click .dropdownTeam': function(event){
         Router.go("mainTeam");
-    },
-    'click #changePasswordButton': function(event){
-        event.preventDefault();
-        event.stopPropagation();
-        hideMainMenu();
-        Session.set("showChangePassword", true);
-        //$("#changePassword").show();
-    },
-    'click #changePassword': function(event){
-        Session.set("showChangePassword", false);
-        //$("#changePassword").hide();
-    },
-    'click #changePassForm': function(event){
-        event.stopPropagation();
-    },
-    'submit #changePassForm': function(event){
-        event.preventDefault();
-        var oldPassword = event.target.oldPass.value;
-        var newPassword = event.target.newPass.value;
-        var newConfirm = event.target.newPassConfirm.value;
-        if (Session.get("isFB")){
-            alert("You logged in with FB!");
-            Session.set("showChangePassword", false);
-            // $("#changePassword").hide();
-        }
-        else if (newPassword == newConfirm){
-            Accounts.changePassword(oldPassword, newPassword, function(err){
-                if (err){
-                    alert(err.reason);
-                    Session.set("showChangePassword", false);
-                    // $("#changePassword").hide();
-                }
-                else{
-                    Session.set("showChangePassword", false);
-                    // $("#changePassword").hide();
-                }
-            });
-        }
-        else{
-            alert("Passwords no not match"); //TODO Send error to user
-            Session.set("showChangePassword", false);
-            // $("#changePassword").hide();
-        }
     },
     'click .icon-moreiconnavbar': function(event) {
         event.stopPropagation();
