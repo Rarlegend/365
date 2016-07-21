@@ -29,9 +29,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-
 								<img class="unselectable" id="splashLogo" src="/images/keepspace_white.png">
-
 						</div>
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
 							<ul class="nav navbar-nav" id="actionContainer">
@@ -65,41 +63,28 @@
 				<div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-bottom: 30px">
 					<ul class="nav navbar-nav" id="actionContainer">
 						<li id="loginLink"><a onclick="//$('.detail').animatescroll({padding:71});">LOGIN</a></li>
-						<li id="signupLink"><a onclick="//$('.features').animatescroll({padding:71});">SIGN UP</a></li>
+						<!-- <li id="signupLink"><a onclick="//$('.features').animatescroll({padding:71});">SIGN UP</a></li> -->
 						<!-- <li><a onclick="$('.social').animatescroll({padding:71});">Social </a></li> -->
 					</ul>
 			</div>
 
 			<div class="container" id="mainSlide" >
-			 <div  style="height: 550px;">
-				 <img id="centerLogo" src="/images/keepspace-logo-blue.png">
-
-					 <!--<img style="margin-bottom:2%;" src="images/signupwithfbbutton.png" class="landingButton" id="facebookSignButton">-->
-					 <!-- <img src="images/signupbutton.png" id="facebookSignButton"> -->
-					 <!--<div id="buttonContainer">
-						 <a class="waves-effect waves-light btn facebook-button" id="facebookSignButton"><i></i></a>
-						 <p style="margin-bottom: 20px; margin-top:5px; color:black;"> or </p>
-						 <a class="waves-effect waves-light btn signup-button" id="goSignupButton"><i></i></a>
-					 </div>
-				 -->
-					 <!--<img src="images/signupherebutton.png" class="landingButton" id="goSignupButton">-->
-					 <p id="centerText"> Today is the beginning of your journey to mindfulness. </p>
-					 <input type="text" id="centerTextBox" value="Tell us something about your day."
+			 	<div  style="height: 550px;">
+				 	<img id="centerLogo" src="/images/keepspace-logo-blue.png">
+					<p id="centerText"> Today is the beginning of your journey to mindfulness. </p>
+					<input type="text" id="centerTextBox" value="Tell us something about your day."
 							 onclick="if(this.value=='Tell us something about your day.'){this.value=''; this.style.color='#000'; this.style.borderColor='#000';}"
 							 onblur="if(this.value==''){this.value='Tell us something about your day.'; this.style.color='#999999'; this.style.borderColor='#999999';}" />
 
-							 <div id="Keep">Keep</div>
-						<ul class="hiThoughts" >
-							 {{#each hiThoughts}}
-										{{>thought}}
-								{{/each}}
-						</ul>
+					<div id="Keep">Keep</div>
+					<ul class="hiThoughts" >
+							{{#each hiThoughts}}
+								{{>thought}}
+							{{/each}}
+					</ul>
 				</div>
-
-
-
-				<img class="icon-downbutton" src="images/scrollDownButtonSplash.png">
-				<p class="scrollDown" style="display:none">Scroll Down</p>
+				<!-- <img class="icon-downbutton" src="images/scrollDownButtonSplash.png">
+				<p class="scrollDown" style="display:none">Scroll Down</p> -->
 			</div>
 			<div class="container" id="signupOptionsSlide">
 				<div class="row">
@@ -343,7 +328,5 @@
 		// <script src="js/scripts.js"></script>
 		// <script src="js/retina.min.js"></script> -->
 	</body>
-	{{> yield}}
+	<!-- {{> yield}} -->
 </template>
-
-<!--  -->

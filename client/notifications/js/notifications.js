@@ -1,11 +1,13 @@
+
 Template.notifications.helpers({
 	notifications: function(){
         
 		var ready = Meteor.subscribe('Notifications').ready();
+        var moreReady = Meteor.subscribe('thoughts').ready();
 
         result = [];
-        // var ready = Meteor.subscribe('Notifications').ready();
         var notifications = Notifications.find().fetch();
+        // console.log(notifications);
         
         var counter = 0;
         notifications.forEach(function (notification) {   
@@ -19,7 +21,18 @@ Template.notifications.helpers({
                 element.isFriendType = true;
             }
             else{
-                element.notification = ' collected your post:';
+                var text = ""
+                if (notification.postId){
+                    var thought = Thoughts.findOne({_id:notification.postId});
+                    if (thought){
+                        var text = thought.text;
+                        if(text.length > 100){
+                            text = text.substr(0,100) + "..."
+                        }
+                        var text = ' "' + text + '"';
+                    }
+                }
+                element.notification = ' collected your post:' + text;
                 element.isFriendType = false;
             }
             element.username = user.username;
@@ -45,6 +58,7 @@ Template.notifications.helpers({
             }
             result.unshift(element);
             Session.set("loadedNotifications", true);
+            Session.set("loadedThoughts", true);
             Session.set("numUnread", numUnread);
             // if (notification.type == "acceptRequest")
             //     sAlert.success(user.username + ' accepted your friend request!', {position: 'bottom'});
@@ -58,9 +72,10 @@ Template.notifications.helpers({
     },
     numNotifications: function(){
         var ready = Session.get("loadedNotifications");
+        var moreReady = Session.get("loadedThoughts");
         return{
             data: Session.get("numUnread"),
-            ready: ready
+            ready: ready && moreReady
         }
     }
 });

@@ -182,7 +182,7 @@ Template.thought.hooks({
             return;
         }
         var bubble = $('#' + thought._id);
-        console.log($(bubble)[0].style.backgroundColor);
+        // console.log($(bubble)[0].style.backgroundColor);
         var item_clone = bubble.clone();
         bubble.data("clone", item_clone);
         var position = bubble.position();
@@ -712,6 +712,9 @@ Template.thought.helpers({
     },
     day: function (event) {
         var newDate = new Date(this.createdAt);
-        return "Day " + newDate.getDOY();
+        return newDate.getDOY();
+    },
+    question: function(event){
+        return this.question;
     }
 });
