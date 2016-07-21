@@ -75,29 +75,29 @@ Template.thought.onRendered(function()  {
 
           case 0:
                 node.css({
-                    'top':-30,
-                    'left': 350,
+                    'top':-300,
+                    'left': 850,
                     'background-color' : "#F38286"
                 });
                 break;
           case 1:
                 node.css({
-                    'top': -150,
-                    'right': 850,
-                    'background-color' : "#32C0D2"                  });
+                    'top': 60,
+                    'right': 150,
+                    'background-color' : "#F38286"                  });
                 break;
           case 2:
                 node.css({
-                    'top': 80,
-                    'left': 45,
-                    'background-color': "#F38286"
+                    'top': -20,
+                    'left': 850,
+                    'background-color': "#32C0D2"
                 });
                 break;
           case 3:
                 node.css({
-                    'top': -300,
-                    'right': 125,
-                    'background-color' : "#F38286"
+                    'top': -10,
+                    'left': 300,
+                    'background-color' : "#32C0D2"
                 });
                break;
                case 4:
@@ -109,51 +109,25 @@ Template.thought.onRendered(function()  {
                      break;
                case 5:
                      node.css({
-                         'top': 5,
-                         'right': 50,
-                         'background-color' : "#32C0D2"                  });
+                         'top': -400,
+                         'left': 650,
+                         'background-color' : "#F38286"                  });
                      break;
                case 6:
                      node.css({
                          'top': -370,
-                         'left': 5,
-                         'background-color': "#FAA43A"
+                         'right': 175,
+                         'background-color': "#32C0D2"
                      });
                      break;
                case 7:
                      node.css({
-                         'top': -400,
-                         'right': 270,
-                         'background-color' : "#32C0D2"
+                         'top': -150,
+                         'right': 20,
+                         'background-color' : "#FAA43A"
                      });
                     break;
-                    case 8:
-                          node.css({
-                              'top':30,
-                              'left': 100,
-                              'background-color' : "#F38286"
-                          });
-                          break;
-                    case 9:
-                          node.css({
-                              'top': 5,
-                              'right': 100,
-                              'background-color' : "#32C0D2"                  });
-                          break;
-                    case 10:
-                          node.css({
-                              'top': 300,
-                              'left': 5,
-                              'background-color': "#FAA43A"
-                          });
-                          break;
-                    case 11:
-                          node.css({
-                              'top': 200,
-                              'right': 270,
-                              'background-color' : "#F38286"
-                          });
-                         break;
+
         }
         splashThoughts += 1;
     } else if (thought.userId == Meteor.userId()) {

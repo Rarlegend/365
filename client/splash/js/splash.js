@@ -11,16 +11,16 @@ Template.splashBanner.events({
     },
 	'click #teamLink': function() {
 		event.preventDefault();
-		$("body, html").animate({ 
+		$("body, html").animate({
 				scrollTop: $("#teamSlide").offset().top - em(5.3)
 		}, 800);
 	},
 	'click #fixedLoginLink': function(){
 		event.stopPropagation();
-		$("body, html").animate({ 
+		$("body, html").animate({
 				scrollTop: $("#topSlide").offset().top
 		}, 800);
-		
+
 		$(".signOptions").hide();
 		// $(".signupEmail").val("");
 		$("#mainSlide").hide();
@@ -28,10 +28,10 @@ Template.splashBanner.events({
 	},
 	'click #fixedSignupLink': function(){
 		event.stopPropagation();
-		$("body, html").animate({ 
+		$("body, html").animate({
 				scrollTop: $("#topSlide").offset().top
 		}, 800);
-		
+
 		$(".signOptions").hide();
 		$("#mainSlide").hide();
 		$("#navSignupOption").show();
@@ -42,7 +42,7 @@ Template.splashBanner.events({
 		// console.log(text);
 		Meteor.loginWithFacebook(
 			{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-			'user_posts','publish_actions']}, 
+			'user_posts','publish_actions']},
 			function(err){
 					if (!err){
 						Session.set("isFB", true);
@@ -163,7 +163,7 @@ Template.splashBanner.events({
 	},
 	'click .scrollDown': function(event){
 		event.preventDefault();
-		$("body, html").animate({ 
+		$("body, html").animate({
 				scrollTop: $("#secondSlide").offset().top - em(5.3)
 		}, 800);
 	},
@@ -183,9 +183,9 @@ Template.splashBanner.events({
 });
 
 Template.splashBanner.helpers({
-    'splashThoughts' : function () {
+  /*  'splashThoughts' : function () {
         return SplashThoughts.find({});
-    },
+    },*/
 	'hiThoughts' : function () {
 		return HiThoughts.find({});
 	}
@@ -194,7 +194,7 @@ Template.splashBanner.helpers({
 Template.splashBanner.onRendered(function(){
 	$(".alertDiv").click(closeAlert);
 	$(".closeAlert").click(closeAlert);
-	$.keyframe.define([{
+/*	$.keyframe.define([{
 	name: animationName,
 	'0%': {
 			'transform': 'translatex(0px) translatey(0px)'
@@ -214,7 +214,7 @@ Template.splashBanner.onRendered(function(){
 	'100%': {
 			'transform': 'translatex(0px) translatey(0px)'
 	}
-	}]);
+}]);*/
 	$("#splashThoughtBox").keypress(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
 		if (code == 13){
@@ -269,7 +269,7 @@ function em(input) {
 function loginWithFacebook(){
 	Meteor.loginWithFacebook(
 		{requestPermissions: ['email', 'user_friends', 'user_location', 'user_status',
-		'user_posts','publish_actions']}, 
+		'user_posts','publish_actions']},
 		function(err){
 			if (!err){
 			Session.set("isFB", true);
@@ -299,5 +299,5 @@ function loginWithFacebook(){
 				console.log(err);
 			}
 		}
-	)	
+	)
 }
