@@ -539,9 +539,9 @@ Template.thought.events({
         console.log($(text.get(0)).text().length);
         var radius = Math.min( parseInt(container.css('width')), parseInt(container.css('height')) - 75 );
         if ($(text.get(0)).text().length <= 1055) {
-          radius /= 1.2;
+          radius *= 1.2;
         } else {
-          radius /= 1.15;
+          radius *= 1.15;
         }
         radius -= 20;
         if (feed == "calFeed") {
