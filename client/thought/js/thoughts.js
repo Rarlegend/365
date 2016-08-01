@@ -83,7 +83,7 @@ Template.thought.onRendered(function()  {
           case 1:
                 node.css({
                     'top': -400,
-                    'right': 750,
+                    'right': 950,
                     'background-color' : "#32C0D2"                  });
                 break;
           case 2:
@@ -96,7 +96,7 @@ Template.thought.onRendered(function()  {
           case 3:
                 node.css({
                     'top': -300,
-                    'right': 125,
+                    'right': 130,
                     'background-color' : "#F38286"
                 });
                break;
@@ -562,7 +562,7 @@ Template.thought.events({
         var text = $(bubble.children().get(1)).children();
         var buttons = $(bubble.children().get(2)).children();
         var container = $(event.currentTarget.parentNode);
-        console.log($(text.get(0)).text().length);
+        //console.log($(text.get(0)).text().length);
         var radius = Math.min( parseInt(container.css('width')), parseInt(container.css('height')) - 75 );
         if ($(text.get(0)).text().length <= 1055) {
           radius /= 1.2;

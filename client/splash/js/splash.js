@@ -194,7 +194,7 @@ Template.splashBanner.helpers({
 Template.splashBanner.onRendered(function(){
 	$(".alertDiv").click(closeAlert);
 	$(".closeAlert").click(closeAlert);
-	$.keyframe.define([{
+	/*$.keyframe.define([{
 	name: animationName,
 	'0%': {
 			'transform': 'translatex(0px) translatey(0px)'
@@ -214,7 +214,7 @@ Template.splashBanner.onRendered(function(){
 	'100%': {
 			'transform': 'translatex(0px) translatey(0px)'
 	}
-	}]);
+	}]);*/
 	$("#splashThoughtBox").keypress(function(e) {
 		var code = (e.keyCode ? e.keyCode : e.which);
 		if (code == 13){
