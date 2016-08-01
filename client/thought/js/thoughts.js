@@ -82,8 +82,8 @@ Template.thought.onRendered(function()  {
                 break;
           case 1:
                 node.css({
-                    'top': -150,
-                    'right': 850,
+                    'top': -400,
+                    'right': 750,
                     'background-color' : "#32C0D2"                  });
                 break;
           case 2:

@@ -36,7 +36,7 @@ Accounts.onCreateUser(function(options, user){
     user.profile.firstName = options.firstName;
     user.profile.lastName = options.lastName;
     user.profile.phone = options.phone;
-    user.facebookID = user.services.facebook.id;
+    //user.facebookID = user.services.facebook.id;
     user.profile.fbFriendList = {}
     return user;
 });
