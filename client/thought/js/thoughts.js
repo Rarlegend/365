@@ -560,8 +560,10 @@ Template.thought.events({
         $(bubble.children().get(1)).css({
             'display' : 'block',
             'height' : radius - (radius * .33),
-            'width' : '100%',
-            'position': 'relative'
+            'position': 'relative',
+            'width': '85%',
+            'margin-right': '0',
+            'margin-left': '0'
         });
         radius = (radius + 75) / 2;
         var width = Math.min( parseInt(container.css('width')), parseInt(container.css('height')) - 65 ) - radius;
@@ -599,8 +601,9 @@ Template.thought.events({
             });
         }
         bubble.toggleClass('condensed expanded');
-        text.get(0).className = 'text-expanded';
-      text.get(1).className = 'text-expanded';
+        text.get(0).className = 'author-expanded';
+        text.get(1).className = 'question-expanded';
+        text.get(2).className = 'text-expanded';
         text.css({'left': (radius - (radius * Math.cos(0.785398))) + 'px'});
         text.fadeOut(function(){
             text.fadeIn();
@@ -635,10 +638,12 @@ Template.thought.events({
         bubble.toggleClass('condensed expanded');
       $(bubble.children().get(1)).removeClass('text-container');
         $(bubble.children().get(1)).addClass('text');
-          text.get(0).className = 'text-question';
-          text.get(1).className = 'text-inner';
-          $(text.get(0)).removeAttr('style');
-          $(text.get(1)).removeAttr('style');
+        text.get(0).className = 'text-question';
+      text.get(1).className = 'text-question';
+      text.get(2).className = 'text-inner';
+      $(text.get(0)).removeAttr('style');
+      $(text.get(1)).removeAttr('style');
+      $(text.get(2)).removeAttr('style');
         $(bubble.children().get(1)).removeAttr('style');
         author.toggleClass('header-show header-hide');
         author.removeAttr('style');

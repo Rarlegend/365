@@ -75,21 +75,80 @@
     outline: solid;
     outline-color: white;
     */
-    width: calc(100% - 33%);
     /*vertical-align: middle;*/
     /*horiz-align: middle;*/
+		width: 72%;
+		overflow-y: auto;
+		overflow-x: auto;
     line-height: normal;
-    overflow-x: auto;
-    overflow-y: auto;
-    word-wrap: break-word;
+		word-wrap: break-word;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     text-align: center;
+
+}
+
+.author-expanded  {
+    position: relative;
+    /*display: block;*/
+    color: white;
+    padding-bottom: 15px;
+    /*margin-top: 0px;
+    /*margin: 0 auto;
+    outline: solid;
+    outline-color: white;
+    */
+    /*vertical-align: middle;*/
+    /*horiz-align: middle;*/
+		width: 72%;
+		overflow-y: auto;
+		overflow-x: auto;
+    line-height: normal;
+		word-wrap: break-word;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: center;
+		font-size: 1.2em;
+		font-weight: 700;
+		margin-left: 32%;
+}
+
+.question-expanded  {
+    position: relative;
+    /*display: block;*/
+    color: white;
+    padding-bottom: 15px;
+    /*margin-top: 0px;
+    /*margin: 0 auto;
+    outline: solid;
+    outline-color: white;
+    */
+    /*vertical-align: middle;*/
+    /*horiz-align: middle;*/
+		width: 72%;
+		overflow-y: auto;
+		overflow-x: auto;
+    line-height: normal;
+		word-wrap: break-word;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: center;
+		font-size: 0.9em;
 }
 
 
@@ -199,7 +258,8 @@ input.button-add {
 .text-container {
     display: block;
     overflow-y: auto;
-    width: calc(100% - 33%);
+		overflow-x: hidden;
+    width: 100%;
 }
 
 

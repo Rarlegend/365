@@ -25,14 +25,14 @@ Meteor.startup(function () {
 
     SplashThoughts.remove({});
     HiThoughts.remove({});
-    Meteor.call("addHiThought", hiThoughtOne, "Who or what made you smile today?" , "Keepspace");
-    Meteor.call("addHiThought", hiThoughtTwo, "Who challenged you today?","Keepspace");
-    Meteor.call("addHiThought", hiThoughtThree, "If you had a chance to be a teacher, what class would you teach?","Keepspace");
-    Meteor.call("addHiThought", hiThoughtFour, "Tell us something you learned about a friend today.","Keepspace");
-    Meteor.call("addHiThought", hiThoughtFive, "When did you feel most proud of yourself today?", "Keepspace");
-    Meteor.call("addHiThought", hiThoughtSix, "Did you have a moment of conflict today? Tell us about it.","Keepspace");
-    Meteor.call("addHiThought", hiThoughtSeven, "Is there any part of today you would redo?" ,"Keepspace");
-    Meteor.call("addHiThought", hiThoughtEight, "Did you run into someone you might have a crush on? Explain why you like them." ,"Keepspace");
+    Meteor.call("addHiThought", "   43", hiThoughtOne, "Who or what made you smile today?" , "Keepspace");
+    Meteor.call("addHiThought", "   11", hiThoughtTwo, "Who challenged you today?","Keepspace");
+    Meteor.call("addHiThought", "   64", hiThoughtThree, "If you had a chance to be a teacher, what class would you teach?","Keepspace");
+    Meteor.call("addHiThought", "   98", hiThoughtFour, "Tell us something you learned about a friend today.","Keepspace");
+    Meteor.call("addHiThought", "   104", hiThoughtFive, "When did you feel most proud of yourself today?", "Keepspace");
+    Meteor.call("addHiThought", "   323", hiThoughtSix, "Did you have a moment of conflict today? Tell us about it.","Keepspace");
+    Meteor.call("addHiThought", "   34", hiThoughtSeven, "Is there any part of today you would redo?" ,"Keepspace");
+    Meteor.call("addHiThought", "   24", hiThoughtEight, "Did you run into someone you might have a crush on? Explain why you like them." ,"Keepspace");
     Meteor.call("addSplashThought", splashThoughtOne, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtTwo, "Keepspace");
     Meteor.call("addSplashThought", splashThoughtThree, "Keepspace");
